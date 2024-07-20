@@ -3,7 +3,10 @@ import sqlite3
 import json
 from mactemperatures import get_thermal_readings
 from datetime import datetime
+from flask import Flask, jsonify
 
+#initialize the Flask app
+app = Flask(__name__)
 
 #create the database that will hold the system data regarding CPU usage, memory usage
 #and disk usage
@@ -78,6 +81,12 @@ def get_sys_data():
     return json.dumps(data)
 
 
+#route to get the system data
+@app.route('/data', methods=['GET'])
+def data():
+    return jsonify(get_sys_data())
+
+
 if __name__ == "__main__":
     create_database()
-    print(get_sys_data())
+    app.run(host='0.0.0.0', port=5001, debug=False)
