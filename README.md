@@ -25,3 +25,11 @@
    Ensure you have Python installed. Install the necessary Python packages using `requirements.txt`:
    ```bash
    pip install -r backend/requirements.txt
+
+2. **Run the Backend**
+
+   Navigate to the backend directory and start the server:
+   '''bash
+   python sys_monitor.py
+
+   
