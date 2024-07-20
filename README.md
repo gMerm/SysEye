@@ -2,19 +2,6 @@
 
 **SysEye** is a system monitoring tool consisting of a backend service and a frontend client. The backend collects system performance metrics and stores them, while the frontend fetches and displays this data.
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Setup](#setup)
-   - [Backend Setup](#backend-setup)
-   - [Frontend Setup](#frontend-setup)
-3. [Usage](#usage)
-4. [Example Output](#example-output)
-5. [Troubleshooting](#troubleshooting)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
-
 ## Overview
 
 ### Backend
