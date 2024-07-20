@@ -21,6 +21,7 @@
 ### Backend Setup
 
 1. **Install Dependencies**
-   Ensure you have Python installed. Install the necessary Python packages:
+
+   Ensure you have Python installed. Install the necessary Python packages using `requirements.txt`:
    ```bash
-   pip install Flask psutil mactemperatures
+   pip install -r backend/requirements.txt
