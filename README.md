@@ -36,7 +36,7 @@
 
 1. **Install Swift and Dependencies**
 
-  Ensure Swift is installed on your machine. You will need to use Swift Package Manager to manage dependencies.
+   Ensure Swift is installed on your machine. You will need to use Swift Package Manager to manage dependencies.
 
 2. **Build the Frontend**
 
