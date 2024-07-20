@@ -29,7 +29,30 @@
 2. **Run the Backend**
 
    Navigate to the backend directory and start the server:
-   '''bash
+   ```bash
    python sys_monitor.py
+
+### Frontend Setup
+
+1. **Install Swift and Dependencies**
+
+  Ensure Swift is installed on your machine. You will need to use Swift Package Manager to manage dependencies.
+
+2. **Build the Frontend**
+
+   Navigate to the frontend directory and build the Swift application:
+   ```bash
+   swift build
+
+3. **Run the Frontend**
+
+   Execute the built application:
+   ```bash
+   ./.build/debug/frontend
+
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests if you encounter any bugs or have suggestions for improvements.
 
    
