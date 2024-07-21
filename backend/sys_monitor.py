@@ -4,6 +4,7 @@ import json
 from mactemperatures import get_thermal_readings
 from datetime import datetime
 from flask import Flask, jsonify
+import os
 
 #initialize the Flask app
 app = Flask(__name__)
@@ -11,20 +12,21 @@ app = Flask(__name__)
 #create the database that will hold the system data regarding CPU usage, memory usage
 #and disk usage
 def create_database():
-    conn = sqlite3.connect('sys_monitor.db')
-    c = conn.cursor()
-    c.execute('''
-              CREATE TABLE IF NOT EXISTS perf_data (
-                  timestamp TEXT,
-                  cpu REAL,
-                    memory REAL,
-                    disk_io REAL,
-                    temperature REAL,
-                    disk_fullness REAL
-              )
-              ''')
-    conn.commit()
-    conn.close()
+    if not os.path.exists('sys_monitor.db'):
+        conn = sqlite3.connect('sys_monitor.db')
+        c = conn.cursor()
+        c.execute('''
+                CREATE TABLE IF NOT EXISTS perf_data (
+                    timestamp TEXT,
+                    cpu REAL,
+                        memory REAL,
+                        disk_io REAL,
+                        temperature REAL,
+                        disk_fullness REAL
+                )
+                ''')
+        conn.commit()
+        conn.close()
     
 
 #insert the system data into the database
@@ -78,7 +80,7 @@ def get_sys_data():
     
     #return the data as a JSON object
     data = {'cpu': cpu, 'memory': memory, 'disk_io': disk_io, 'temperature': temp, 'disk_fullness': percent_used}
-    return json.dumps(data)
+    return data
 
 
 #route to get the system data
