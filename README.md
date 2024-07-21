@@ -50,6 +50,30 @@
    ```bash
    swift run
 
+### Run it as a service
+
+1. **Create log dir**
+
+   ```bash
+   mkdir -p ~/SysEye/logs
+
+2. **Run the Backend**
+
+   Navigate to the Directory Containing the Python Script and run the Python Script Using nohup:
+   ```bash
+   nohup python3 sys_monitor.py > ~/SysEye/logs/sys_monitor.log 2>&1 &
+
+3. **Build the Frontend**
+
+   Navigate to the frontend directory and build the Swift application:
+   ```bash
+   swift build
+
+4. **Run the Frontend**
+
+   ```bash
+   nohup ./SysMonitorApp > ~/SysEye/logs/sys_monitorapp.log 2>&1 &
+   
 ## Contributing
 
 Contributions are welcome! Please open issues or submit pull requests if you encounter any bugs or have suggestions for improvements.
