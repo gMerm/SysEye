@@ -50,7 +50,6 @@
    ```bash
    swift run
 
-
 ## Contributing
 
 Contributions are welcome! Please open issues or submit pull requests if you encounter any bugs or have suggestions for improvements.
