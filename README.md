@@ -48,7 +48,7 @@
 
    Execute the built application:
    ```bash
-   ./.build/debug/frontend
+   swift run
 
 
 ## Contributing
