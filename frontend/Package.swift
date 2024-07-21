@@ -2,19 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "frontend",
+    name: "SysMonitorApp",
     platforms: [
-        .macOS(.v13) 
+        .macOS(.v11) 
     ],
-    dependencies: [
-        // Add Alamofire as a dependency
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.0"),
-    ],
+    dependencies: [],
     targets: [
-        // Define the executable target and specify Alamofire as a dependency
         .executableTarget(
-            name: "frontend",
-            dependencies: ["Alamofire"]
+            name: "SysMonitorApp",
+            dependencies: []
         ),
     ]
 )
