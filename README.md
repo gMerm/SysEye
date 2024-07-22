@@ -1,5 +1,9 @@
 # SysEye
 
+![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-5.7-orange?logo=swift&logoColor=white)
+![Vim](https://img.shields.io/badge/Vim-8.2-green?logo=vim&logoColor=white)
+
 **SysEye** is a system monitoring tool consisting of a backend service and a frontend client. The backend collects system performance metrics and stores them, while the frontend fetches and displays this data.
 
 ## Overview
