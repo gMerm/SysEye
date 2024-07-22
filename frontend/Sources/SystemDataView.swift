@@ -27,7 +27,7 @@ struct SystemDataView: View {
                 ProgressCircle(value: fetcher.systemData.cpu, label: "CPU", color: cpu_color)
                 ProgressCircle(value: fetcher.systemData.memory, label: "RAM", color: memory_color)
                 ProgressCircle(value: fetcher.systemData.disk_io, label: "Disk IO", color: disk_io_color)
-                ProgressCircle(value: fetcher.systemData.disk_fullness, label: "Disk Fullness", color: disk_fullness_color)
+                ProgressCircle(value: fetcher.systemData.disk_fullness, label: "Disk Capacity", color: disk_fullness_color)
             }
             .padding()
 
