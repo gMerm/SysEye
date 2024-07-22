@@ -31,7 +31,9 @@ echo "Log directory created at ~/SysEye/logs."
 
 # 5. Run the backend Python script with nohup
 cd backend
+source venv/bin/activate
 nohup python3 sys_monitor.py > ~/SysEye/logs/sys_monitor.log 2>&1 &
+deactivate
 cd ..
 echo "Backend Python script is running."
 
