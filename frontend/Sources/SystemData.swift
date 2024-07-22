@@ -9,11 +9,12 @@ struct SystemData: Decodable {
     let disk_io: Double
     let temperature: Double
     let disk_fullness: Double
+    let sensors: [String: Double]
 }
 
 //class that will fetch the data from the API every 5 seconds and update the data
 class SystemDataFetcher: ObservableObject {
-    @Published var systemData = SystemData(cpu: 0, memory: 0, disk_io: 0, temperature: 0, disk_fullness: 0)
+    @Published var systemData = SystemData(cpu: 0, memory: 0, disk_io: 0, temperature: 0, disk_fullness: 0, sensors: [:])
     var cancellable: AnyCancellable?
 
     init() {
@@ -29,7 +30,7 @@ class SystemDataFetcher: ObservableObject {
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: SystemData.self, decoder: JSONDecoder())
-            .replaceError(with: SystemData(cpu: 0, memory: 0, disk_io: 0, temperature: 0, disk_fullness: 0))
+            .replaceError(with: SystemData(cpu: 0, memory: 0, disk_io: 0, temperature: 0, disk_fullness: 0, sensors: [:]))
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] data in
                 self?.systemData = data

@@ -46,11 +46,12 @@ def insert_data(cpu, memory, disk_io, temperature, disk_fullness):
 def get_temperature():
     try:
         readings = get_thermal_readings()  
+        print(readings)
         if readings:
             temps = [abs(temp) for temp in readings.values() if isinstance(temp, (int, float))]
             if temps:
                 average_temp = sum(temps) / len(temps)
-                return average_temp
+                return average_temp, readings
         return None
     except Exception as e:
         print(f"Temperature retrieval error: {e}")
@@ -67,7 +68,9 @@ def get_sys_data():
     cpu = psutil.cpu_percent(interval=1)
     memory = psutil.virtual_memory().percent
     disk_io = psutil.disk_usage('/').percent
-    temp = get_temperature()
+    
+    sensors = []
+    temp, sensors = get_temperature()
     
     hdd = psutil.disk_usage('/System/Volumes/Data')
     total_space = hdd.total / (2**30)  
@@ -79,7 +82,7 @@ def get_sys_data():
     insert_data(cpu, memory, disk_io, temp, percent_used)
     
     #return the data as a JSON object
-    data = {'cpu': cpu, 'memory': memory, 'disk_io': disk_io, 'temperature': temp, 'disk_fullness': percent_used}
+    data = {'cpu': cpu, 'memory': memory, 'disk_io': disk_io, 'temperature': temp, 'disk_fullness': percent_used, 'sensors': sensors}
     return data
 
 
