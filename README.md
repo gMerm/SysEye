@@ -4,75 +4,31 @@
 
 ## Overview
 
-### Backend
+1. **Git clone**
 
-- **File:** `sys_monitor.py`
-- **Description:** Collects system performance metrics (CPU, memory, disk I/O, temperature, and disk fullness), stores them in an SQLite database, and exposes them via a REST API.
-- **Dependencies:** `Flask`, `psutil`, `mactemperatures`
-
-### Frontend
-
-- **File:** `Sources/main.swift`
-- **Description:** Fetches data from the backend API and prints it to the console.
-- **Dependencies:** `Alamofire`
-
-## Setup
-
-### Backend Setup
-
-1. **Install Dependencies**
-
-   Ensure you have Python installed. Install the necessary Python packages using `requirements.txt`:
+   Clone the project.
    ```bash
-   pip install -r backend/requirements.txt
+   git clone https://github.com/gMerm/SysEye.git
 
-2. **Run the Backend**
-
-   Navigate to the backend directory and start the server:
-   ```bash
-   python sys_monitor.py
-
-### Frontend Setup
-
-1. **Install Swift and Dependencies**
-
-   Ensure Swift is installed on your machine. You will need to use Swift Package Manager to manage dependencies.
-
-2. **Build the Frontend**
-
-   Navigate to the frontend directory and build the Swift application:
-   ```bash
-   swift build
-
-3. **Run the Frontend**
-
-   Execute the built application:
-   ```bash
-   swift run
-
-### Run it as a service
-
-1. **Create log dir**
+2. **Navigate into project**
 
    ```bash
-   mkdir -p ~/SysEye/logs
+   cd SysEye
 
-2. **Run the Backend**
+3. **Alter Permissions**
 
-   Navigate to the Directory Containing the Python Script and run the Python Script Using nohup:
+   Give execution permission to the script that will help you build the project.
    ```bash
-   nohup python3 sys_monitor.py > ~/SysEye/logs/sys_monitor.log 2>&1 &
+   chmod +x execute.sh
 
-3. **Build the Frontend**
-
-   Navigate to the frontend directory and build the Swift application:
-   ```bash
-   swift build
-
-4. **Run the Frontend**
+4. **Run the script**
 
    ```bash
-   nohup ./SysMonitorApp > ~/SysEye/logs/sys_monitorapp.log 2>&1 &
+   ./execute.sh
+
+5. **Enjoy**
+
+   Check your menu bar to see the application running.
    
 ## Contributing
 
